@@ -36,7 +36,7 @@ class mailScraper (Thread):
 		except Exception as e:
 			print("[thread exception]\n"+str(e))
 		return 0
-		#print ("Thread '" + self.url + "' terminato")
+
 
 
 
