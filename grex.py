@@ -36,7 +36,7 @@ def mailScraper(url,rex_string,headers):
 		resp = requests.get(url, headers=headers,verify=False,timeout=3)
 		if resp.status_code == 200:
 			extraction=re.findall("([a-zA-Z0-9_.+-]+"+rex_string+")", resp.text)
-			print(url)
+			#print(url)
 	except Exception as e:
 		pass
 		#print("[thread exception]\n"+str(e))
@@ -99,7 +99,7 @@ def main():
 	headers = {"user-agent" : USER_AGENT}
 
 	for el in results:
-		print(el)
+		print(colored(el,'cyan'))
 		
 	with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:	
 		future_to_mail_scrape = {executor.submit(mailScraper, el, rex_string, headers): el for el in results}
@@ -107,15 +107,14 @@ def main():
 			mail_scrape=future_to_mail_scrape[future]
 			try:
 				return_value = future.result()
-				#if len(return_value[1])>0:
 				if return_value[0] not in res_dict:
 					res_dict[return_value[0]]=return_value[1]
 			except:
 				pass
 			
-	print("\n")
+	print("\n.....................................................Mail found:\n")
 	for el in res_dict:
 		for mail in res_dict[el]:
-			print(colored(mail,'red')+", "+el)	
+			print(colored(mail,'red')+", "+colored(el,'cyan'))	
 	
 main()
