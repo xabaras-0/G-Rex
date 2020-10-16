@@ -1,7 +1,7 @@
 = G-Rex
 :warning-caption: :warning:
 
-G-Rex is a simple script to automate scraping of publicly available mail addresses for a specific domain.
+G-Rex is a simple OSINT tool to automate scraping of publicly available mail addresses for a specific domain.
 Data is searched through Google Search, specifiyng domain and number of Google pages to scroll (example: `grex.py gmail.com 2`).
 
 WARNING: Extensive use of this script may result in a temporary ban of automatic requests to Google from your IP.
