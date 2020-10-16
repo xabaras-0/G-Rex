@@ -1,0 +1,64 @@
+= G-Rex
+:warning-caption: :warning:
+
+G-Rex is a simple script to automate scraping of publicly available mail addresses for a specific domain.
+Data is searched through Google Search, specifiyng domain and number of Google pages to scroll (example: `grex.py gmail.com 2`).
+
+WARNING: Extensive use of this script may result in a temporary ban of automatic requests to Google from your IP.
+
+----
+$ grex.py --help
+
+usage: grex.py [-h] domain pages
+
+positional arguments:
+  domain
+  pages       number of pages to scrape
+
+optional arguments:
+  -h, --help  show this help message and exit
+
+----
+
+
+example:
+----
+$ python3 grex.py  gmail.com 2
+ 
+                                              ████████      
+   █████      █████  █████  █    █            ███▄███████   
+   █          █   █  █       █  █             ███████████   
+   █ ███  ██  █████  ████     ██              ██████        
+   █   █      █  █   █       █  █             █████████     
+   █████      █   █  █████  █    █  █       ███████         
+                                    ██     ████████████     
+                                    ███   ██████████  █     
+                                      ██████████████        
+                                       █████████████        
+                                        ███████████         
+                                         ███  ██            
+                                         █    █             
+                                         ██   ██            
+                                                            
+[2020-10-16 10:24:41.745738] - Search started for domain gmail.com
+
+
+.....................................................Scanning Page 2 of 2
+
+.....................................................5 Results found
+https://sites.google.com/site/mailloginsignup/gmailcom-login
+https://it.wikipedia.org/wiki/Gmail
+https://it.wikipedia.org/wiki/Gmail
+https://asrc.gc.cuny.edu/gmail-sign-up/
+https://www.grey-panthers.it/senza-categoria/aprire-un-account-posta-elettronica-gmail/
+
+.....................................................Mail found:    (*Results containing personal data have been removed)
+
+nomeutente+testo@gmail.com, https://it.wikipedia.org/wiki/Gmail
+no.me.ut.en.te@gmail.com, https://it.wikipedia.org/wiki/Gmail
+nomeutente@gmail.com, https://it.wikipedia.org/wiki/Gmail
+nome.utente@gmail.com, https://it.wikipedia.org/wiki/Gmail
+example@gmail.com, https://asrc.gc.cuny.edu/gmail-sign-up/
+nome.cognome@gmail.com, https://www.grey-panthers.it/senza-categoria/aprire-un-account-posta-elettronica-gmail/
+
+----
